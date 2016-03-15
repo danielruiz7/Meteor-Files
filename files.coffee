@@ -872,7 +872,7 @@ class Meteor.Files
             ++totalSentChunks
             progress = (uploaded / file.size) * 100
             result.progress.set progress
-            onProgress and onProgress(progress)
+            onProgress and onProgress(progress, file.name)
 
             last        = (part is streams and currentChunk >= chunksQtyInPart)
             uploaded   += self.chunkSize
